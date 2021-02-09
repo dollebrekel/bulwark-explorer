@@ -445,7 +445,7 @@ async function update() {
     // Notice how we moved the cron lock on top so we lock before block height is fetched otherwise collisions could occur
     locker.lock(type);
     hasAcquiredLocked = true;
-    const info = await rpc.call('getinfo');
+    const info = await rpc.call('getblockchaininfo');
 
     // Before syncing we'll confirm merkle root of X blocks back
     await confirmBlocks(info.blocks);
