@@ -25,7 +25,7 @@ async function syncCoin() {
 
   //@todo wrap rpc in try catch and if add new "RPC Status"
   //If rpc fails, display indicator on website that RPC is down
-  const info = await rpc.call('getinfo');
+  const info = await rpc.call('getblockchaininfo');
   const masternodes = await rpc.call('getmasternodecount');
   const nethashps = await rpc.call('getnetworkhashps');
 
